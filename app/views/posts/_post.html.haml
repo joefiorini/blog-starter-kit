@@ -1,0 +1,21 @@
+.post
+  %img{:src => "/images/icons/24-book-blue-mark.png"}
+  %h2= post.title
+.title
+  %h3 
+    tagged with:
+    %a{:href => "/tags/personal"} personal
+    &ndash;
+    %a{:href => "/tags/dogs"} dogs
+  %hr
+  .post-content
+    = post.body
+    %fieldset
+      %legend tools
+      %a{:href => "#"} permalink
+      &ndash;
+      %a{:href => "#"} save to del.icio.us
+      &ndash;
+      %a{:href => "#"}digg this [3]
+      &ndash;
+      %a{:href => "#"} email to friend
