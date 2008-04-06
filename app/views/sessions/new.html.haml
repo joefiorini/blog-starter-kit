@@ -1,0 +1,6 @@
+= flash[:error]
+
+- form_tag(session_url) do
+  = label :openid_url, "OpenId URL:"
+  = text_field_tag :openid_url, '', :class => 'openid-login'
+  = submit_tag 'Sign in', :disable_with => 'Signing in&hellip;'

@@ -1,0 +1,8 @@
+%ol
+  - @posts.each do |post|
+    %li
+      = format_date_short(post.created_at)
+      &ndash;
+      = link_to post.title, post_url(post)
+      = link_to '[edit]', edit_post_url(post)
+      = link_to '[delete]', post_url(post), :method => :delete, :confirm => "Are you sure you want to delete this post?"
