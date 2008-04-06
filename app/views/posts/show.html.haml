@@ -1,4 +1,13 @@
 = render_partial 'post', @post
 
-= link_to 'Edit', edit_object_url |
-= link_to 'Back', collection_url
+- form_for([@post, Comment.new], :html => {:id => 'comment-submission'}) do |f|
+/
+  %p
+    .form-field
+      = #label :name, 'Name:'
+      = #f.text_field :name
+      = #f.text_field :email
+      = #f.text_field :url
+      = #f.text_area :body
+
+- end

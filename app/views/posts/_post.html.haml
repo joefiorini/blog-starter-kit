@@ -1,8 +1,10 @@
 .post
   %img{:src => "/images/icons/24-book-blue-mark.png"}
   %h2= post.title
-.title
-  %h3 
+  %h3#tags
+    on
+    = format_date(post.created_at)
+    &ndash;
     tagged with:
     %a{:href => "/tags/personal"} personal
     &ndash;

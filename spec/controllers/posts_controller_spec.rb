@@ -11,6 +11,10 @@ describe PostsController do
     def do_get
       get :index
     end
+    
+    def do_get_by_month(month)
+      get :index, :month => month
+    end
   
     it "should be successful" do
       do_get
@@ -23,8 +27,13 @@ describe PostsController do
     end
   
     it "should find all posts" do
-      Post.should_receive(:find).with(:all).and_return([@post])
+      Post.should_receive(:find).with(:all, :order => 'created_at desc').and_return([@post])
       do_get
+    end
+    
+    it "should find all posts for given month" do
+      Post.should_receive(:find).with(:all, :conditions => ["MONTH(created_at) = 'April'"], :order => 'created_at desc')
+      do_get_by_month 'April'
     end
   
     it "should assign the found posts for the view" do
@@ -51,7 +60,7 @@ describe PostsController do
     end
 
     it "should find all posts" do
-      Post.should_receive(:find).with(:all).and_return([@post])
+      Post.should_receive(:find).with(:all, :order => 'created_at desc').and_return([@post])
       do_get
     end
   
@@ -301,7 +310,7 @@ describe PostsController do
     end
   
     it "should call destroy on the found post" do
-      @post.should_receive(:destroy)
+      @post.should_receive(:destroy).and_return(true)
       do_delete
     end
   

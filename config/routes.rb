@@ -1,7 +1,18 @@
 ActionController::Routing::Routes.draw do |map|
+  
+  map.root :controller => 'posts'
+  
   map.resources :posts do |post|
     post.resources :comments
   end
+  
+  map.connect '/:month',
+              :controller => 'posts',
+              :action => 'index',
+              :month => /#{(DateTime::MONTHNAMES - [nil]).join('|')}/
+  
+  map.month '/:month',
+            :controller => 'posts'
   
   # The priority is based upon order of creation: first created -> highest priority.
 
