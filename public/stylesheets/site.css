@@ -1,0 +1,139 @@
+body
+{
+	color: black;
+	background: #f1efdc url('/images/bg.jpg') repeat-x;
+}
+
+h1
+{
+	color: white;
+	font-size: 1.5em;
+	font-weight: bold;
+}
+
+h2
+{
+	color: #99f;
+	font-size: 1.75em;
+	font-variant: small-caps;
+	font-family: sans-serif;
+	display: inline;
+}
+
+h3
+{
+	font-size: .75em;
+	color: #999;
+}
+
+p
+{
+	padding-top: .5em;
+	padding-bottom: .5em;
+}
+
+fieldset
+{
+	border: 1px inset #999;
+	padding: .5em;
+}
+
+legend
+{
+	font-size: 1em;
+	background: url('/images/icons/16-tool-a.png') no-repeat;
+	padding-left:18px;
+}
+
+#main
+{
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 1200px;
+	min-width: 600px;
+	width: 90%;
+	margin-top: 1em;
+}
+
+#page-content
+{
+	float: left;
+	width: 100%;
+	padding-right: .75em;
+}
+
+#modules
+{
+	margin-left: -310px;
+	width:310px;
+	margin-top:2em;
+	float: left;
+}
+
+#header img
+{
+	float:right;
+	margin-right:15px;
+}
+
+#header h1 a
+{
+	height: 89px;
+	width: 384px;
+	margin:55px 0 30px 15px;
+	background: url('/images/logo.jpg') no-repeat;
+	display:block;
+}
+
+#header h1 em
+{
+	display: none;
+}
+
+#footer
+{
+	clear: both;
+	padding: 1em;
+	font-size: small;
+	text-align: center;
+}
+
+.module
+{
+	margin-bottom: 1em;
+}
+.post
+{
+	margin-right: 310px;
+	padding-bottom: 1em;
+}
+.post-content
+{
+	text-align: left;
+}
+
+.module fieldset
+{
+    border:0;
+}
+
+.module legend
+{
+    padding-left:18px;
+}
+
+.twitter legend
+{
+    background: url('/images/icons/16-em-pencil.png') no-repeat;
+}
+
+.tagcloud legend
+{
+    background: url('/images/icons/16-file-archive.png') no-repeat;
+}
+
+.blogroll legend
+{
+    background: url('/images/icons/16-star-hot.png') no-repeat;
+}
+
