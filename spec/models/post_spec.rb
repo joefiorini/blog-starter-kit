@@ -36,15 +36,5 @@ describe Post do
     @post.body = "this has a\nline break"
     @post.body.should == "this has a<br>line break"
   end
-  
-  it "should find by month and return not nil" do
-    @post.title = 'testing 1 2 3'
-    @post.body = 'this is a test of the emergency posting system!'
-    @post.save
-    @post = Post.find_by_date(Date::MONTHNAMES[DateTime.now.month])
-    @post.first.should_not be_nil
-    @post.first.created_at.month.should == DateTime.now.month
-    @post.first.destroy
-  end
-  
+    
 end

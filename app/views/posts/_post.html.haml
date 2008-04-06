@@ -3,7 +3,7 @@
   %h2= post.title
   %h3#tags
     on
-    = format_date(post.created_at)
+    = format_date_long(post.created_at)
     &ndash;
     tagged with:
     %a{:href => "/tags/personal"} personal

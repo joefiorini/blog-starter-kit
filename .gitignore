@@ -1,0 +1,12 @@
+db/schema.rb
+db/schema.sql
+config/database.yml
+log/*
+*.log
+tmp/sessions
+tmp/cache
+tmp/sockets
+joe
+*.sqlite3
+.DS_Store
+tmp/*

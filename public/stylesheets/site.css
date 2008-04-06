@@ -76,6 +76,12 @@ legend
 	margin-right:15px;
 }
 
+#welcome_message
+{
+	float: right;
+	margin-right:15px;
+}
+
 #header h1 a
 {
 	height: 89px;
@@ -135,5 +141,11 @@ legend
 .blogroll legend
 {
     background: url('/images/icons/16-star-hot.png') no-repeat;
+}
+
+.openid-login
+{
+	background: #fff url(/images/openid-logo.gif) no-repeat scroll 0pt 50%;
+	padding-left: 18px;
 }
 

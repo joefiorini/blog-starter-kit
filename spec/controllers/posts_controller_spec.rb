@@ -12,10 +12,6 @@ describe PostsController do
       get :index
     end
     
-    def do_get_by_month(month)
-      get :index, :month => month
-    end
-  
     it "should be successful" do
       do_get
       response.should be_success
@@ -26,16 +22,11 @@ describe PostsController do
       response.should render_template('index')
     end
   
-    it "should find all posts" do
-      Post.should_receive(:find).with(:all, :order => 'created_at desc').and_return([@post])
+    it "should find the 10 most recent posts" do
+      Post.should_receive(:find).with(:all, :limit => 10, :order => 'created_at desc').and_return([@post])
       do_get
     end
-    
-    it "should find all posts for given month" do
-      Post.should_receive(:find).with(:all, :conditions => ["MONTH(created_at) = 'April'"], :order => 'created_at desc')
-      do_get_by_month 'April'
-    end
-  
+      
     it "should assign the found posts for the view" do
       do_get
       assigns[:posts].should == [@post]
@@ -59,8 +50,8 @@ describe PostsController do
       response.should be_success
     end
 
-    it "should find all posts" do
-      Post.should_receive(:find).with(:all, :order => 'created_at desc').and_return([@post])
+    it "should find the 10 most recent posts" do
+      Post.should_receive(:find).with(:all, :limit => 10, :order => 'created_at desc').and_return([@post])
       do_get
     end
   

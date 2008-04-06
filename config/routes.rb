@@ -1,6 +1,9 @@
 ActionController::Routing::Routes.draw do |map|
   
   map.root :controller => 'posts'
+  map.home 'home', :controller => 'posts'
+  map.login 'login', :controller => 'sessions', :action => 'new'
+  map.logout 'logout', :controller => 'sessions', :action => 'destroy'
   
   map.resources :posts do |post|
     post.resources :comments
@@ -11,9 +14,9 @@ ActionController::Routing::Routes.draw do |map|
               :action => 'index',
               :month => /#{(DateTime::MONTHNAMES - [nil]).join('|')}/
   
-  map.month '/:month',
-            :controller => 'posts'
-  
+  map.open_id_complete 'session', :controller => "sessions", :action => "create", :requirements => { :method => :get }
+  map.resource :session
+                
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:
