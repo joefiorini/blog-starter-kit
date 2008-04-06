@@ -1,0 +1,5 @@
+#posts
+  - @posts.each do |post|
+    = render_partial 'post', post
+- if @current_month
+  = link_to "To #{@current_month.previous_month}", month_path(@current_month.previous_month)
