@@ -10,3 +10,4 @@ joe
 *.sqlite3
 .DS_Store
 tmp/*
+*.tmproj
