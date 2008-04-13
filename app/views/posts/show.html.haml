@@ -1,13 +1,30 @@
 = render_partial 'post', @post
 
-- form_for([@post, Comment.new], :html => {:id => 'comment-submission'}) do |f|
-/
-  %p
-    .form-field
-      = #label :name, 'Name:'
-      = #f.text_field :name
-      = #f.text_field :email
-      = #f.text_field :url
-      = #f.text_area :body
+.comments
+  - @post.comments.each do |c|
+    .comment
+      - if c.url
+        = link_to c.name, c.url
+      - else
+        = c.name
+      says:
+      %p.comment-body
+        = c.comment
 
-- end
+%fieldset
+  %legend Voice Your Opinion!
+  - form_for([@post, Comment.new], :html => {:id => 'comment-submission'}) do |f|
+
+    %p
+      .form-field
+        = label :name, 'Name:'
+        = f.text_field :name
+      .form-field
+        = label :email, 'Email:'
+        = f.text_field :email
+      .form-field
+        = label :url, 'URL:'
+        = f.text_field :url
+      .form-field
+        = f.text_area :comment
+        = submit_tag

@@ -19,11 +19,11 @@
       %img{ :src => "/images/glasses.png" }/
       %h1
         %a{ :href => "/" }
-          %em
-            faithfulgeek.org
+          faithfulgeek.org
     #main
-      #page-content
-        = yield
+      #wrapper
+        #page-content
+          = yield
       #modules
         .twitter.module
           %fieldset

@@ -18,15 +18,13 @@ describe "/posts/show.html.haml" do
   end
   
   it "should render add comment form" do
-    pending "saving comments for a future sprint" do
       render "/posts/show"
       response.should have_tag("form#comment-submission") do 
         response.should have_tag("label", "Name:")
         response.should have_tag("input#comment_name")
         response.should have_tag("input#comment_email")
         response.should have_tag("input#comment_url")
-        response.should have_tag("textarea#comment_body")
-      end
+        response.should have_tag("textarea#comment_comment")
     end
   end
 end

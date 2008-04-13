@@ -2,7 +2,7 @@ require File.dirname(__FILE__) + '/../spec_helper'
 
 describe Post do
   it "should have many comments" do
-    Post.should_receive(:has_many).with(:comments)
+    Post.should_receive(:acts_as_commentable)
     load 'post.rb'
   end
 end
@@ -29,7 +29,7 @@ describe Post do
     @post.save
     
     post = Post.find(:first)
-    post.comments.size.should == 1
+    post.comments.length.should == 1
   end
   
   it "should replace new lines with <br> when setting body" do

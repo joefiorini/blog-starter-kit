@@ -4,22 +4,22 @@
 
 <% form_for(@post) do |f| %>
   <p>
-    <b>Title</b><br />
+    <b><%= title_label %></b><br />
     <%= f.text_field :title %>
   </p>
 
   <p>
-    <b>Body</b><br />
+    <b><%= body_label %></b><br />
     <%= f.text_area :body %>
   </p>
 
   <p>
-    <b>Excerpt</b><br />
+    <b><%= excerpt_label %></b><br />
     <%= f.text_area :excerpt %>
   </p>
 
   <p>
-    <b>Is published</b><br />
+    <b><%= is_published_label %></b><br />
     <%= f.check_box :is_published %>
   </p>
 

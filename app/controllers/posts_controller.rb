@@ -1,5 +1,5 @@
 class PostsController < ResourceController::Base
-  
+
   new_action.wants.html do
     for_admin_only do
       render :html => @posts

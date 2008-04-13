@@ -5,10 +5,8 @@ ActionController::Routing::Routes.draw do |map|
   map.login 'login', :controller => 'sessions', :action => 'new'
   map.logout 'logout', :controller => 'sessions', :action => 'destroy'
   
-  map.resources :posts do |post|
-    post.resources :comments
-  end
-  
+  map.resources :posts, :has_many => :comments
+    
   map.connect '/:month',
               :controller => 'posts',
               :action => 'index',

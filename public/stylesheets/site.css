@@ -34,15 +34,8 @@ p
 
 fieldset
 {
-	border: 1px inset #999;
+	border: 1px dashed #999;
 	padding: .5em;
-}
-
-legend
-{
-	font-size: 1em;
-	background: url('/images/icons/16-tool-a.png') no-repeat;
-	padding-left:18px;
 }
 
 #main
@@ -55,11 +48,17 @@ legend
 	margin-top: 1em;
 }
 
-#page-content
+#wrapper
 {
 	float: left;
 	width: 100%;
 	padding-right: .75em;
+}
+
+#page-content
+{
+	margin-right: 310px;
+	padding-bottom: 1em;	
 }
 
 #modules
@@ -89,11 +88,7 @@ legend
 	margin:55px 0 30px 15px;
 	background: url('/images/logo.jpg') no-repeat;
 	display:block;
-}
-
-#header h1 em
-{
-	display: none;
+	text-indent: -9999px;
 }
 
 #footer
@@ -108,11 +103,7 @@ legend
 {
 	margin-bottom: 1em;
 }
-.post
-{
-	margin-right: 310px;
-	padding-bottom: 1em;
-}
+
 .post-content
 {
 	text-align: left;
@@ -149,3 +140,9 @@ legend
 	padding-left: 18px;
 }
 
+div.post-content legend
+{
+	font-size: 1em;
+	background: url('/images/icons/16-tool-a.png') no-repeat;
+	padding-left:18px;
+}
