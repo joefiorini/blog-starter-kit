@@ -11,31 +11,53 @@ h1
 	font-weight: bold;
 }
 
+h1 a, h1 a:link, h1 a:visited, h1 a:active
+{
+	border: none;
+}
+
 h2
 {
 	color: #99f;
 	font-size: 1.75em;
-	font-variant: small-caps;
-	font-family: sans-serif;
 	display: inline;
 }
 
-h3
+h2.title
+{
+	font-family: georgia, 'times new roman', serif;
+	font-size: 1.65em;
+}
+
+h3#tags
 {
 	font-size: .75em;
-	color: #999;
+	color: #666;
+	margin-top: 7px;
+	margin-bottom: 7px;
+}
+
+a, a:link, a:visited, a:active
+{
+	color: #465A9C;
+}
+
+a, a:link, a:visited, a:active
+{
+	color: #435695;
+	text-decoration: none;
+	border-bottom: 1px dotted #435695;
+}
+
+a:hover
+{
+	color: #263256;
 }
 
 p
 {
 	padding-top: .5em;
 	padding-bottom: .5em;
-}
-
-fieldset
-{
-	border: 1px dashed #999;
-	padding: .5em;
 }
 
 #main
@@ -57,8 +79,15 @@ fieldset
 
 #page-content
 {
-	margin-right: 310px;
+	margin-right: 340px;
 	padding-bottom: 1em;	
+}
+
+#tools
+{
+	position: relative;
+	margin-top: 20px;
+	left: 35px;
 }
 
 #modules
@@ -69,16 +98,12 @@ fieldset
 	float: left;
 }
 
-#header img
+#footer
 {
-	float:right;
-	margin-right:15px;
-}
-
-#welcome_message
-{
-	float: right;
-	margin-right:15px;
+	clear: both;
+	padding: 1em;
+	font-size: small;
+	text-align: center;
 }
 
 #header h1 a
@@ -91,12 +116,10 @@ fieldset
 	text-indent: -9999px;
 }
 
-#footer
+#header img
 {
-	clear: both;
-	padding: 1em;
-	font-size: small;
-	text-align: center;
+	float:right;
+	margin-right:15px;
 }
 
 .module
@@ -104,8 +127,15 @@ fieldset
 	margin-bottom: 1em;
 }
 
+.post
+{
+	margin-bottom: 35px;
+}
+
 .post-content
 {
+	border-top: 1px solid #bbb;
+	padding-top: 7px;
 	text-align: left;
 }
 
