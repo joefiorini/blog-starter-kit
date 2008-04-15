@@ -54,10 +54,37 @@ a:hover
 	color: #263256;
 }
 
+em
+{
+	position: relative;
+	top: 1px;
+	font-style: italic;
+}
+
 p
 {
 	padding-top: .5em;
 	padding-bottom: .5em;
+}
+
+div.comment-form
+{
+	
+}
+
+div.comment-form p label
+{
+	margin-right: 5px;
+}
+div.comment-form p input
+{
+	font-size: .75em;
+	margin-right: 15px;
+}
+
+div.comment-form p textarea
+{
+	width: 417px;
 }
 
 #main
@@ -137,6 +164,28 @@ p
 	border-top: 1px solid #bbb;
 	padding-top: 7px;
 	text-align: left;
+}
+
+.comment
+{
+	position: relative;
+	margin-bottom: 25px;
+	left: 50px;
+	width: 75%;
+}
+
+.comment img
+{
+	position: absolute;
+	left: -30px;
+	top: 23px;
+}
+
+.comment p.comment-body
+{
+	position: relative;
+	margin-top: 15px;
+	left: 15px;
 }
 
 .module fieldset

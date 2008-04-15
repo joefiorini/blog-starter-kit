@@ -11,7 +11,7 @@ RAILS_GEM_VERSION = '2.0.2' unless defined? RAILS_GEM_VERSION
 require File.join(File.dirname(__FILE__), 'boot')
 
 Time::DATE_FORMATS[:short_date_only] = "%D"
-
+Time::DATE_FORMATS[:long] = "%B %e, %Y"
 Rails::Initializer.run do |config|
   # Settings in config/environments/* take precedence over those specified here.
   # Application configuration should go into files in config/initializers

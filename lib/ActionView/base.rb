@@ -16,7 +16,7 @@ module ActionView
 	  				required_char =  options[:required_char] || '*'
 	  				label_text = args[0].class == String ? args[0] : symbol.to_s[0..-7].titleize
 
-	  				label(:post, symbol.to_s.gsub(/_label/, ''), label_text) + (is_required ? required_char : '') + prompt_char
+	  				label(:post, symbol.to_s.gsub(/_label/, ''), label_text + prompt_char) + (is_required ? required_char : '')
         	}
 
         end

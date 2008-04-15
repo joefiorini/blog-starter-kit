@@ -5,28 +5,32 @@
 .comments
   - @post.comments.each do |c|
     .comment
+      » on
+      %em= c.created_at.to_formatted_s :long
       - if c.url
         = link_to c.name, c.url
       - else
         = c.name
       says:
+      %img{ :src => '/images/gravatar.jpg', :width => 40, :height => 40 }
       %p.comment-body
         = c.comment
 
 %fieldset
   %legend Voice Your Opinion!
   - form_for([@post, Comment.new], :html => {:id => 'comment-submission'}) do |f|
-
-    %p
-      .form-field
-        = label :name, 'Name:'
-        = f.text_field :name
-      .form-field
+    .comment-form
+      %p
+        = name_label
+        = f.text_field :name, :size => 20
         = label :email, 'Email:'
-        = f.text_field :email
-      .form-field
-        = label :url, 'URL:'
-        = f.text_field :url
-      .form-field
+        = f.text_field :email, :size => 20
+      %p
+        = url_label
+        = f.text_field :url, :size => 54
+      %p
+        = comment_label
+      %p
         = f.text_area :comment
-        = submit_tag
+      %p
+        = submit_tag 'Post Comment'

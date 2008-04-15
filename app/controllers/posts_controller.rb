@@ -28,10 +28,6 @@ class PostsController < ResourceController::Base
   update.wants.xml { render :xml => @post }
   destroy.wants.xml { head :ok }
   
-  show.before do
-    @extra_stylesheet = 'single.css'
-  end
-  
   protected
   
   def load_collection
