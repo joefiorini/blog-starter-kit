@@ -1,5 +1,6 @@
 = render_partial 'post', @post
 
+%a{:name => 'comments'}
 .comments
   - @post.comments.each do |c|
     .comment
