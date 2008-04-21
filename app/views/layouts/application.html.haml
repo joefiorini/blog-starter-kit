@@ -7,6 +7,7 @@
     %meta{ :name => "author", :content => "Joe Fiorini" }/
     %link{ :href => "/stylesheets/reset.css", :rel => "stylesheet", :type => "text/css" }/
     %link{ :href => "/stylesheets/site.css", :rel => "stylesheet", :type => "text/css" }/
+    = feedburner_link_tag :faithfulgeek
     - if @extra_stylesheet
       %link{ :href => "/stylesheets/#{@extra_stylesheet}", :rel => "stylesheet", :type => "text/css" }
     / Date: 2008-03-07

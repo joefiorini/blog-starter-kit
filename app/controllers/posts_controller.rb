@@ -6,6 +6,8 @@ class PostsController < ResourceController::Base
     end
   end
   
+	index.wants.atom
+
   index.wants.html do
     for_users_by_type do |type|
       case type
