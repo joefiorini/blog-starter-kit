@@ -4,7 +4,7 @@ ActionController::Routing::Routes.draw do |map|
   map.home 'home', :controller => 'posts'
   map.login 'login', :controller => 'sessions', :action => 'new'
   map.logout 'logout', :controller => 'sessions', :action => 'destroy'
-  map.comments_for_post 'posts/:id', :controller => 'posts', :action => 'show', :anchor => 'comments'
+  map.comments_for_post 'posts/show/:id', :controller => 'posts', :action => 'show', :anchor => 'comments'
   
   map.resources :posts, :has_many => :comments
     

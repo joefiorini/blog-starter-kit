@@ -20,7 +20,7 @@ class PostsController < ResourceController::Base
       end
     end
   end
-  
+
   show.wants.xml { render :xml => @post }
   new_action.wants.xml { render :xml => @post }
   index.wants.xml { render :xml => @posts }

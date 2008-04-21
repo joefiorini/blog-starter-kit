@@ -1,6 +1,6 @@
 module ActionView
 	class Base
-	
+		
 		def method_missing(symbol, *args)
       if symbol.to_s. =~ /_label$/
         self.class.instance_eval do
@@ -18,11 +18,9 @@ module ActionView
 
 	  				label(:post, symbol.to_s.gsub(/_label/, ''), label_text + prompt_char) + (is_required ? required_char : '')
         	}
-
         end
 
         send symbol
-
 			end
 		end
 	end

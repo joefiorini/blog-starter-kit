@@ -1,5 +1,6 @@
 module PostsHelper
-  def previous_month(month)
-    month.previous_month
-  end
+	def textilize(value)
+		value = value.body if value.respond_to?(:body)
+		RedCloth.new(h(value)).to_html
+	end
 end

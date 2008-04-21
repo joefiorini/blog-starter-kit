@@ -61,3 +61,4 @@ Rails::Initializer.run do |config|
 end
 
 require 'lib/ActionView/base'
+require 'RedCloth'
