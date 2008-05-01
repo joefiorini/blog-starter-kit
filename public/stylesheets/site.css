@@ -227,7 +227,7 @@ div.comment-form p textarea
 	top: 23px;
 }
 
-.comment p.comment-body
+.comment p
 {
 	position: relative;
 	margin-top: 15px;

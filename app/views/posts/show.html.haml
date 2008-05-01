@@ -13,8 +13,7 @@
         = c.name
       says:
       %img{ :src => '/images/gravatar.jpg', :width => 40, :height => 40 }
-      %p.comment-body
-        = c.comment
+      = textilize c.comment
 
 %fieldset
   %legend Voice Your Opinion!
