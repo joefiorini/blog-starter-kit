@@ -12,7 +12,12 @@
     <b><%= body_label %></b><br />
     <%= f.text_area :body %>
   </p>
-
+  
+  <p>
+    <%= tags_label %><br />
+    <%= f.text_field :tags %>
+  </p>
+  
   <p>
     <b><%= excerpt_label %></b><br />
     <%= f.text_area :excerpt %>

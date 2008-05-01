@@ -35,7 +35,11 @@ class PostsController < ResourceController::Base
   protected
   
   def load_collection
+		if params[:tag]
+			@posts = Post.find_tagged_with params[:tag] 
+		else
       @posts = Post.find(:all, :limit => 10, :order => "created_at desc")
+		end
   end
 
 end

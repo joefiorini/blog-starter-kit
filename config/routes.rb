@@ -6,7 +6,7 @@ ActionController::Routing::Routes.draw do |map|
   map.logout 'logout', :controller => 'sessions', :action => 'destroy'
 	map.feed	'feed', :controller => 'posts', :action => 'index', :format => 'atom'
   map.comments_for_post 'posts/show/:id', :controller => 'posts', :action => 'show', :anchor => 'comments'
-  
+  map.tag 'posts/tags/:tag', :controller => 'posts', :action => 'index'
   map.resources :posts, :has_many => :comments
     
   map.connect '/:month',

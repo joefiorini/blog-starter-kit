@@ -6,9 +6,7 @@
     = format_date_long(post.created_at)
     &ndash;
     tagged with:
-    %a{:href => "/tags/personal"} personal
-    &ndash;
-    %a{:href => "/tags/dogs"} dogs
+    = tags_for post
   .post-content
     = textilize post
     #tools
