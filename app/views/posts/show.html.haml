@@ -12,7 +12,8 @@
       - else
         = c.name
       says:
-      %img{ :src => '/images/gravatar.jpg', :width => 40, :height => 40 }
+      =#%img{ :src => '/images/gravatar.jpg', :width => 40, :height => 40 , :class => 'gravatar' }
+      = gravatar_for c, :default => 'wavatar'
       = textilize c.comment
 
 %fieldset
