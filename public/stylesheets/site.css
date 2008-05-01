@@ -220,7 +220,7 @@ div.comment-form p textarea
 	width: 75%;
 }
 
-.comment img
+.comment img.gravatar
 {
 	position: absolute;
 	left: -30px;
