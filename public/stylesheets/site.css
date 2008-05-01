@@ -189,8 +189,9 @@ div.comment-form p textarea
 
 #header img
 {
-	float:right;
-	margin-right:15px;
+	position: absolute;
+	right: 15px;
+	top: 63px;
 }
 
 .module
