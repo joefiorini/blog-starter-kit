@@ -1,6 +1,6 @@
 module PostsHelper
 	def textilize(value)
 		value = value.body if value.respond_to?(:body)
-		RedCloth.new(h(value)).to_html
+		RedCloth.new(value, [:filter_html]).to_html
 	end
 end

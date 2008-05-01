@@ -57,6 +57,13 @@ h6
 	font-size: 1.1em;
 }
 
+blockquote
+{
+	margin-left: 1em;
+	font-style: italic;
+	margin-right: 70px;
+}
+
 h2#title
 {
 	font-family: georgia, 'times new roman', serif;

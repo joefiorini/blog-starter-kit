@@ -59,7 +59,13 @@ Rails::Initializer.run do |config|
 end
 
 require 'lib/ActionView/base'
-require 'RedCloth'
+require "#{File.expand_path(RAILS_ROOT)}/vendor/RedCloth-3.0.4/lib/redcloth"
 
+# Add custom date formats
 ActiveSupport::CoreExtensions::Time::Conversions::DATE_FORMATS[:short_date_only] = "%D"
 ActiveSupport::CoreExtensions::Time::Conversions::DATE_FORMATS[:long] = "%B %e, %Y"
+
+# RedCloth HTML WhiteList customizations
+['blockquote', 'table', 'tr', 'td'].each do |tag|
+	RedCloth::BASIC_TAGS.delete tag
+end
