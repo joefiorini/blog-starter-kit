@@ -4,13 +4,26 @@ class Comment
 								:author_email => 'email',
 								:author_url => 'url',
 								:content => 'comment'
-	
+
 	def comment_type
 		"Comment"
 	end
 	
-	def before_create
-		!self.spam?
+	def after_validation
+		unless self.comment_something.empty?
+			self.spam_type = "honeypot"
+		else
+			self.spam_type = ""
+		end
+		
+		if self.spam_type.empty? and self.spam?
+			self.spam_type = "rakismet"
+		else
+			self.spam_type = ""
+		end
+		
+		self.is_spam = !self.spam_type.empty?
+		
 	end
 	
 end

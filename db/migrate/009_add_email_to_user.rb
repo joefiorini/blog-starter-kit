@@ -1,9 +1,13 @@
 class AddEmailToUser < ActiveRecord::Migration
   def self.up
-		add_column 'Users', 'email', :string
+		change_table :users do |t|
+			t.string :email
+		end
   end
 
   def self.down
-		remove_column 'Users', 'email'
+		change_table :users do |t|
+			t.remove :email
+		end
   end
 end

@@ -1,7 +1,7 @@
 .post
   %img{:src => "/images/icons/24-book-blue-mark.png"}
-  %h2#title= link_to post.title, post
-  %h3#tags
+  %h2.title= link_to post.title, post
+  %h3.tags
     on
     = format_date_long(post.created_at)
     &ndash;

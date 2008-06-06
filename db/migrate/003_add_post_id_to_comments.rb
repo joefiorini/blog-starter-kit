@@ -1,9 +1,13 @@
 class AddPostIdToComments < ActiveRecord::Migration
   def self.up
-    add_column :comments, :post_id, :integer
+		change_table :comments do |t| 
+			t.integer :post_id 
+		end
   end
 
   def self.down
-    remove_column :comments, :post_id
+		change_table :comments do |t| 
+			t.remove :post_id
+		end
   end
 end

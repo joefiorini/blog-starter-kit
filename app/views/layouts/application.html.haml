@@ -17,7 +17,6 @@
         #welcome_message
           = "Logged in as: " + @current_user.name
           = link_to 'Logout', logout_url
-      %img{ :src => "/images/glasses.png" }/
       %h1#page-title
         %a{ :href => "/" }
           faithfulgeek.org
@@ -25,34 +24,5 @@
       #wrapper
         #page-content
           = yield
-      #modules
-        .twitter.module
-          %fieldset
-            %legend
-              twitter
-            %p
-              I just twittered all over the place
-            %p
-              I wish skittles were M&Ms
-            %p
-              You have walked the lonely walk of loneliness
-        .blogroll.module
-          %fieldset
-            %legend
-              blogroll
-            %p
-              %a{ :href => "http://www.codinggeekette.com/", :rel => "met" }
-                coding geekette
-            %p
-              %a{ :href => "http://www.hanselman.com/", :rel => "met" }
-                scott hanselman
-            %p
-              %a{ :href => "http://www.coreyhaines.com/", :rel => "met" }
-                corey haines
-        .tagcloud.module
-          %fieldset
-            %legend
-              tag cloud
-            tags
       #footer
         &copy;2008 Joe Fiorini - creative commons license

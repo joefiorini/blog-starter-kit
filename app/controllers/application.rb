@@ -5,6 +5,10 @@ class ApplicationController < ActionController::Base
   helper :all # include all helpers, all the time
   before_filter :retrieve_user
 
+	def tweets_enabled
+		false
+	end
+
   protected
     def for_admin_only
       unless @current_user

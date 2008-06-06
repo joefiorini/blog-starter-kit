@@ -9,7 +9,7 @@ module Juixe
 
       module ClassMethods
         def acts_as_commentable(params={})
-          has_many :comments, :as => :commentable, :dependent => :destroy, :order => (params[:order] || 'created_at ASC')
+          has_many :comments, :as => :commentable, :dependent => :destroy, :order => (params[:order] || 'created_at ASC'), :conditions => (params[:conditions] || '1=1')
           include Juixe::Acts::Commentable::InstanceMethods
           extend Juixe::Acts::Commentable::SingletonMethods
         end

@@ -8,8 +8,8 @@ class CreateUsers < ActiveRecord::Migration
   end
 
   def self.down
-    drop_column :name
-    drop_column :openid_url
+    remove_column :name
+    remove_column :openid_url
     drop_table :users
   end
 end

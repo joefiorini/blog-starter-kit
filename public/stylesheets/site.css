@@ -64,7 +64,7 @@ blockquote
 	margin-right: 70px;
 }
 
-h2#title
+h2.title
 {
 	font-family: georgia, 'times new roman', serif;
 	border: 0;
@@ -72,7 +72,7 @@ h2#title
 	display: inline;
 }
 
-h3#tags
+h3.tags
 {
 	font-size: .75em;
 	color: #666;
@@ -184,9 +184,9 @@ div.comment-form p textarea
 
 #header h1 a
 {
-	height: 89px;
-	width: 384px;
-	margin:55px 0 30px 15px;
+	height: 103px;
+	width: 484px;
+	margin-top:16px;
 	background: url('/images/logo.jpg') no-repeat;
 	display:block;
 	text-indent: -9999px;
@@ -197,6 +197,13 @@ div.comment-form p textarea
 	position: absolute;
 	right: 15px;
 	top: 63px;
+}
+
+/* this is the honeypot captcha to catch spam bots */
+div#comment-something
+{
+	position: absolute;
+	left: -999px;
 }
 
 .module

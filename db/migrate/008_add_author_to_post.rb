@@ -1,9 +1,13 @@
 class AddAuthorToPost < ActiveRecord::Migration
   def self.up
-		add_column 'Posts', :author_id, :integer
+		change_table :posts do |t|
+			t.integer :author_id
+		end
   end
 
   def self.down
-		remove_column 'Posts', :author_id
+		change_table :posts do |t|
+			 t.remove :author_id
+		end
   end
 end

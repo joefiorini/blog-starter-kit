@@ -58,7 +58,10 @@ Rails::Initializer.run do |config|
   # config.active_record.default_timezone = :utc
 end
 
-require 'lib/ActionView/base'
+require "#{File.expand_path(RAILS_ROOT)}/lib/string"
+require "#{File.expand_path(RAILS_ROOT)}/lib/ActionView/base"
+require "#{File.expand_path(RAILS_ROOT)}/lib/Utils/TwitterAPI"
+require "#{File.expand_path(RAILS_ROOT)}/app/models/Twitter/Status"
 require "#{File.expand_path(RAILS_ROOT)}/vendor/RedCloth-3.0.4/lib/redcloth"
 
 # Add custom date formats

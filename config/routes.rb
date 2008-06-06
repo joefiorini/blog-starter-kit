@@ -1,19 +1,19 @@
 ActionController::Routing::Routes.draw do |map|
   
   map.root :controller => 'posts'
+	map.posts_for_date ':year/:month/:day', :controller => 'posts', :action => 'show', :year => /\d{4}/, :month => /\d{2}/, :day => /\d{2}/
+	map.posts_for_year ':year', :controller => 'posts', :action => 'show', :year => /\d{4}/
   map.home 'home', :controller => 'posts'
   map.login 'login', :controller => 'sessions', :action => 'new'
   map.logout 'logout', :controller => 'sessions', :action => 'destroy'
 	map.feed	'feed', :controller => 'posts', :action => 'index', :format => 'atom'
   map.comments_for_post 'posts/show/:id', :controller => 'posts', :action => 'show', :anchor => 'comments'
   map.tag 'posts/tags/:tag', :controller => 'posts', :action => 'index'
+#	map.post ':year/:month/:day/:permalink', :controller => 'posts', :action => 'show'
+#	map.posts_for_date 'posts/:year/:month/:day', :controller => 'posts', :action => 'show' 
+
   map.resources :posts, :has_many => :comments
-    
-  map.connect '/:month',
-              :controller => 'posts',
-              :action => 'index',
-              :month => /#{(DateTime::MONTHNAMES - [nil]).join('|')}/
-  
+
   map.open_id_complete 'session', :controller => "sessions", :action => "create", :requirements => { :method => :get }
   map.resource :session
                 
