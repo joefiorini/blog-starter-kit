@@ -1,0 +1,13 @@
+#location
+  %h1
+    = @location.name
+  #address
+    %p 
+      = @location.address
+    %p 
+      = @location.city + ','
+      = @location.state
+      = @location.zip_code
+  #map
+    = @map.to_html
+    = @map.div(:width => 493, :height => 300)
