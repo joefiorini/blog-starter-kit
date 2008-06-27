@@ -1,4 +1,11 @@
 class LocationsController < ResourceController::Base
+
+	new_action.wants.html do
+		for_admin_only do
+			render :html => @location
+		end
+	end
+
 	show.wants.html do
 		@map = GMap.new("map_div")
 		@map.control_init(:large_map => true)
