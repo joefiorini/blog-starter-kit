@@ -1,285 +1,89 @@
-body
-{
-	color: black;
-	background: #f1efdc url('/images/bg.jpg') repeat-x;
-}
+/*********** Page Layout ***********/
+#container { margin: 0 auto; position: relative; width: 960px; }
 
-h1#page-title
-{
-	color: white;
-	font-size: 1.5em;
-	font-weight: bold;
-}
+/*********** Mast Head ***********/
+#mast { font-family: helvetica; height: 106px; }
 
-h1 a, h1 a:link, h1 a:visited, h1 a:active
-{
-	border: none;
-}
+#logo { position: absolute; background-image: url(/images/logo.png); width: 264px; height: 72px; top: 53px; }
 
-h1, h2, h3, h4, h5, h6
-{
-	color: #333;
-	font-family: "Times New Roman", "verdanya", Times, Serif;
-	font-weight: 300;
-	letter-spacing: 0.01em;
-	padding: 0.2em 0;
-	margin:0.5em 0;	
-}
+div#logo a { display: block; height: 100%; width: 100%; }
 
-h1 
-{
-	font-size: 2.5em;
-}
+div#logo a span { margin-left: -9999px; }
 
-h2 
+/*********** Navigation ***********/
+div#navigation
 {
-
-	font-size:2em;
-}
-
-h3
-{
-	font-size: 1.75em;
-}
-
-h4
-{
-	font-size: 1.25em;
-}
-
-h5
-{
-	font-size: 1.15em;
-}
-
-h6
-{
-	font-size: 1.1em;
-}
-
-blockquote
-{
-	margin-left: 1em;
-	font-style: italic;
-	margin-right: 70px;
-}
-
-h2.title
-{
-	font-family: georgia, 'times new roman', serif;
-	border: 0;
-	font-size: 1.65em;
 	display: inline;
+	position: absolute;
+	overflow: hidden;
+	right: 0px;
+	top: 65px;
 }
 
-h3.tags
-{
-	font-size: .75em;
-	color: #666;
-	margin-top: 7px;
-	margin-bottom: 7px;
-	border: 0;
-}
+#navigation ul { float: left; list-style-type: none; background-color: #b4130a; }
 
-a, a:link, a:visited, a:active
-{
-	color: #465A9C;
-}
+#navigation li.home { border-left: 0; }
 
-a, a:link, a:visited, a:active
+#navigation li { float: left; height: 40px; line-height: 45px; border-left: 1px solid #ffffff; }
+
+#navigation li a
 {
-	color: #435695;
+	display: block;
+	color: white;
+	padding-right: 20px;
+	padding-left: 4px;
+	padding-top: 10px;	
 	text-decoration: none;
-	border-bottom: 1px dotted #435695;
-}
-
-a:hover
-{
-	color: #263256;
-}
-
-em
-{
-	position: relative;
-	top: 1px;
-	font-style: italic;
-}
-
-strong
-{
-	font-weight: bold;
-}
-
-p
-{
-	padding-top: .5em;
-	padding-bottom: .5em;
-}
-
-div.comment-form
-{
-	
-}
-
-div.comment-form p label
-{
-	margin-right: 5px;
-}
-div.comment-form p input
-{
-	font-size: .75em;
-	margin-right: 15px;
-}
-
-div.comment-form p textarea
-{
-	width: 417px;
-}
-
-#main
-{
-	margin-left: auto;
-	margin-right: auto;
-	max-width: 1200px;
-	min-width: 600px;
-	width: 90%;
-	margin-top: 1em;
-}
-
-#wrapper
-{
-	float: left;
-	width: 100%;
-	padding-right: .75em;
-}
-
-#page-content
-{
-	margin-right: 340px;
-	padding-bottom: 1em;	
-}
-
-#tools
-{
-	position: relative;
-	margin-top: 20px;
-	left: 35px;
-}
-
-#modules
-{
-	margin-left: -310px;
-	width:310px;
-	margin-top:2em;
-	float: left;
-}
-
-#footer
-{
-	clear: both;
-	padding: 1em;
-	font-size: small;
-	text-align: center;
-}
-
-#header h1 a
-{
-	height: 103px;
-	width: 484px;
-	margin-top:16px;
-	background: url('/images/logo.jpg') no-repeat;
-	display:block;
-	text-indent: -9999px;
-}
-
-#header img
-{
-	position: absolute;
-	right: 15px;
-	top: 63px;
-}
-
-/* this is the honeypot captcha to catch spam bots */
-div#comment-something
-{
-	position: absolute;
-	left: -999px;
-}
-
-.module
-{
-	margin-bottom: 1em;
-}
-
-.post
-{
-	margin-bottom: 35px;
-}
-
-.post-content
-{
-	border-top: 1px solid #bbb;
-	padding-top: 7px;
+	text-transform: lowercase;
+	height: 100%;
 	text-align: left;
-	line-height: 1.25em;
 }
 
-.comment
-{
-	position: relative;
-	margin-bottom: 25px;
-	left: 50px;
-	width: 75%;
+#navigation li a:hover { background-color: #908a8a; }
+
+/*********** Content ***********/
+
+#page-content { margin-top: 40px; margin-left: 40px; font-family: Arial,sans-serif; line-height: 1.5em; }
+
+strong.chicklet { 
+	background-color: #b4130a; 
+/*	border: solid 1px black; */
+	color: white; 
+	font-size: .8em; 
+	text-transform: uppercase; 
+	padding: 6px 3px 3px 3px;
+	font-family: helvetica; 
+	font-weight: bold; 
 }
 
-.comment img.gravatar
-{
-	position: absolute;
-	left: -30px;
-	top: 23px;
-}
+h3 { color: #aaa; font-size: 1.5em; font-family: helvetica; font-weight: bold; text-transform: lowercase;}
 
-.comment p
-{
-	position: relative;
-	margin-top: 15px;
-	left: 25px;
-}
+div.main-event { margin-top: 20px;}
 
-.module fieldset
-{
-    border:0;
-}
+p.info span.date { color: #aaa; }
+p.info span.at { font-size: 130%; position: relative; top: 1px; }
 
-.module legend
-{
-    padding-left:18px;
-}
+#page-content h1 { font-size: 2.75em; margin-top: 15px; margin-bottom: 15px; color: #333; font-weight: bold; font-family: Helvetica;}
 
-.twitter legend
-{
-    background: url('/images/icons/16-em-pencil.png') no-repeat;
-}
+div.event-meta { font-size: .75em; color: #888; margin-bottom: 50px; border-top: solid thin black; padding-top: 5px; }
+div.event-meta em { color: #444; font-weight: bold;}
+div.event-meta div.presenting { float: left; }
+div.event-meta div.date { float: right; top: 0; left: 20px; }
 
-.tagcloud legend
-{
-    background: url('/images/icons/16-file-archive.png') no-repeat;
-}
+div.post-content { margin-top: 20px; }
+div.post-content p { padding-top: 1em; padding-bottom: 1em;}
 
-.blogroll legend
-{
-    background: url('/images/icons/16-star-hot.png') no-repeat;
-}
+div#ruby-scene { margin-top: 40px;}
 
-.openid-login
-{
-	background: #fff url(/images/openid-logo.gif) no-repeat scroll 0pt 50%;
-	padding-left: 18px;
-}
+div#map { margin-top: 40px; text-align: center;}
+div#map_div { border: solid 1px black;}
 
-div.post-content legend
-{
-	font-size: 1em;
-	background: url('/images/icons/16-tool-a.png') no-repeat;
-	padding-left:18px;
-}
+#location h1 { font-size: 2.25em; }
+#location div#address { text-indent: 40px; }
+
+/*********** Links ***********/
+a, a:link, a:visited, a:active { color: #900; font-family: helvetica; }
+a:hover { color: #908a8a; text-decoration: underline; }
+
+/*********** Footer ***********/
+div#footer { margin-top: 40px; }

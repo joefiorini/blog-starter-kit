@@ -1,21 +1,9 @@
 .post
-  %img{:src => "/images/icons/24-book-blue-mark.png"}
+  = format_date_long(post.created_at)
   %h2.title= link_to post.title, post
-  %h3.tags
-    on
-    = format_date_long(post.created_at)
-    &ndash;
-    tagged with:
-    = tags_for post
   .post-content
     = textilize post
     #tools
       = link_to "#{post.comments.length} comments", comments_for_post_path(post.id)
       &ndash;
       %a{:href => "#"} permalink
-      &ndash;
-      %a{:href => "#"} save to del.icio.us
-      &ndash;
-      %a{:href => "#"}digg this [3]
-      &ndash;
-      %a{:href => "#"} email to friend

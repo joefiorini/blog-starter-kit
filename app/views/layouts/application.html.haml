@@ -3,26 +3,42 @@
   %head
     %meta{ :content => "text/html; charset=utf-8", "http-equiv" => "Content-Type" }/
     %title
-      faithfulgeek.org
+      CleRB - The Cleveland / Northeast Ohio Ruby Users Group
     %meta{ :name => "author", :content => "Joe Fiorini" }/
     %link{ :href => "/stylesheets/reset.css", :rel => "stylesheet", :type => "text/css" }/
     %link{ :href => "/stylesheets/site.css", :rel => "stylesheet", :type => "text/css" }/
-    = feedburner_link_tag :faithfulgeek
-    - if @extra_stylesheet
-      %link{ :href => "/stylesheets/#{@extra_stylesheet}", :rel => "stylesheet", :type => "text/css" }
-    / Date: 2008-03-07
+    - if @map
+      = GMap.header
   %body
-    #header
-      - if @current_user
-        #welcome_message
-          = "Logged in as: " + @current_user.name
-          = link_to 'Logout', logout_url
-      %h1#page-title
-        %a{ :href => "/" }
-          faithfulgeek.org
-    #main
-      #wrapper
+    #container
+      #mast
+        - if @current_user
+          #welcome_message
+            = "Logged in as: " + @current_user.name
+            = link_to 'Logout', logout_url
+        #logo
+          %a{ :href => "/" }
+            %span
+              CleRB : The Northeast Ohio Ruby Users Group
+        #navigation
+          %ul
+            %li.home
+              =link_to 'Home', '/'
+            %li
+              =link_to 'Meetings', '/meetings'
+            %li
+              =link_to 'About', '/about'
+            %li
+              =link_to 'Contact', '/contact'
+            %li
+              =link_to 'Resources', '/resources'
+      #main
         #page-content
           = yield
-      #footer
-        &copy;2008 Joe Fiorini - creative commons license
+  %script{ :type => "text/javascript" }
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  %script{ :type => "text/javascript" }
+    var pageTracker = _gat._getTracker("UA-4828879-1");
+    pageTracker._initData();
+    pageTracker._trackPageview();

@@ -1,6 +1,12 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :locations
+
   
   map.root :controller => 'posts'
+	map.meetings '/meetings', :controller => 'TemporaryContent', :action => 'coming_soon'
+	map.about '/about', :controller => 'TemporaryContent', :action => 'coming_soon'
+	map.contact '/contact', :controller => 'TemporaryContent', :action => 'coming_soon'
+	map.groups_resources '/resources', :controller => 'TemporaryContent', :action => 'coming_soon'
 	map.posts_for_date ':year/:month/:day', :controller => 'posts', :action => 'show', :year => /\d{4}/, :month => /\d{2}/, :day => /\d{2}/
 	map.posts_for_year ':year', :controller => 'posts', :action => 'show', :year => /\d{4}/
   map.home 'home', :controller => 'posts'

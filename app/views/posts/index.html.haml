@@ -1,12 +1,4 @@
-#tweets
-  - if @tweets
-    %h2.title= link_to 'Recent Tweets', 'http://www.twitter.com/faithfulgeek'
-    - @tweets.each do |tweet|
-      .tweet
-        = tweet.text
-        Reply ID is:
-        = tweet.in_reply_to_status_id
-    
+= render_partial 'event', nil
 #posts
   - @posts.each do |post|
     = render_partial 'post', post

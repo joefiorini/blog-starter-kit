@@ -7,3 +7,9 @@
 [submodule "vendor/plugins/resource_controller"]
 	path = vendor/plugins/resource_controller
 	url = git://github.com/giraffesoft/resource_controller.git
+[submodule "vendor/plugins/permalink_fu"]
+	path = vendor/plugins/permalink_fu
+	url = git://github.com/technoweenie/permalink_fu.git
+[submodule "vendor/plugins/awesome_fields"]
+	path = vendor/plugins/awesome_fields
+	url = git://github.com/Shadowfiend/awesome_fields.git
