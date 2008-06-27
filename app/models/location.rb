@@ -10,13 +10,6 @@ class Location < ActiveRecord::Base
 		end
 		
 		def full_address(*args)
-			opts = args[0]
-			s = ""
-			if opts[:new_line]
-				s += "#{self.address}\n"
-			else
-				s += "#{self.address}"
-			end
-			"#{s} #{self.city}, #{self.state} #{self.zip_code}"
+			"#{self.address} #{self.city}, #{self.state} #{self.zip_code}"
 		end
 end
