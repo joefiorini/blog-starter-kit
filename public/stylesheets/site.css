@@ -82,8 +82,8 @@ div#map_div { border: solid 1px black;}
 #location div#address { text-indent: 40px; }
 
 /*********** Links ***********/
-a, a:link, a:visited, a:active { color: #900; font-family: helvetica; }
-a:hover { color: #908a8a; text-decoration: underline; }
+a, a:link, a:visited, a:active { color: #900; font-family: helvetica;  }
+a:hover { color: #908a8a; }
 
 /*********** Footer ***********/
 div#footer { margin-top: 40px; }
