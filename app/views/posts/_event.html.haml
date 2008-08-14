@@ -1,17 +1,17 @@
 .main-event
   %strong.chicklet
-    event
+    = event.type || "Post"
   %p.info
-  %h1 Ruby &amp; F# &ndash; A Polyglot Adventure
-  .event-meta
-    .presenting
-      %em Presenting
-      = link_to "Joe O'Brien", 'http://www.objo.com/'
-      &amp;
-      = link_to 'Amanda Laucher', 'http://www.pandamonial.com/'
-    .date
-      %em July 17, 2008 6:30 PM
-      at
-      = link_to 'Dimple Dough Inc.', '/locations/dimpledough-inc'
+  %h1= event.title
+  - if event.type == "Event"
+    .event-meta
+      .presenting
+        %em Presenting
+        = event.presenter
+      .date
+        %em 
+          = event.start_time.to_s :long_ordinal_12hour
+        at
+        = link_to event.location.name, location_url(event.location)
   .post-content
-    ="<p>What is the deal with all of these new languages surfacing? Why should you spend the time to learn a language when it isn't in your job description? What benefit do you get by investing in something that might take off, versus something that is tried and true? What are our mainstream languages currently lacking? This is where F# and IronRuby come into play.</p><p>From currying, passing code around as data, mathematical-based algorithms that make concurrency a breeze, to features such as message passing, IronRuby and F# give you two new ways of thinking about algorithms. In this talk, Amanda and Joe will walk you through the mental differences that F# and IronRuby bring to the traditional developer. They will show you how, by spending time in either or both languages, you will change the way you think and improve the way you solve problems in any language.</p><p>What's your next language going to be?</p><p>Amanda Laucher is a consultant for The Sophic Group and has been architecting and developing solutions for the past 8 years. She has recently been focusing on coaching agile principals at a large corporation in Columbus. As a recent language geek, she has become interested in F# and functional programming and how it can make .NET applications better.</p><p>Joe is a father, speaker, author and developer. Before helping found EdgeCase, LLC, Joe was a developer with ThoughtWorks and spent much of his time working with large J2EE and .NET systems for Fortune 500 companies. He has spent his career as a developer, project manager, and everything in between. Joe is a passionate member of the open source community. He co-founded the Columbus Ruby Brigade and helped organize the Chicago Area Ruby Users Group. His passions are Agile Development in the Enterprise, Ruby, and demonstrating to the Fortune 500 the elegance and power of this incredible language.</p>"
+    = textilize event.body

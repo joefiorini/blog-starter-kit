@@ -1,6 +1,7 @@
 require 'google_geocode'
 class Location < ActiveRecord::Base
-		has_permalink :name
+  has_many :events
+	has_permalink :name
 		
 		def before_save
 			gg = GoogleGeocode.new YAML.load_file(RAILS_ROOT + '/config/gmaps_api_key.yml')[ENV['RAILS_ENV']]

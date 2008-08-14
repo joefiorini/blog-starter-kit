@@ -10,6 +10,7 @@ class PostsController < ResourceController::Base
 	index.wants.atom
 
   index.wants.html do
+    @sticky = Post.sticky
 		Twitter::Status.logger = logger
 		begin
 			if tweets_enabled
@@ -43,7 +44,6 @@ class PostsController < ResourceController::Base
 		elsif params[:year]
 			ex = "Year: #{params[:year]}"
 		end
-		#raise ex
 	end
 
   show.wants.xml { render :xml => @post }
@@ -68,9 +68,9 @@ class PostsController < ResourceController::Base
 
   def load_collection
 		if params[:tag]
-			@posts = Post.find_tagged_with params[:tag] 
+			@posts = Post.find_tagged_with params[:tag]
 		else
-      @posts = Post.find(:all, :limit => 10, :order => "created_at desc")
+      @posts = Post.not_sticky.all  :limit => 10, :order => "created_at desc"
 		end
   end
 

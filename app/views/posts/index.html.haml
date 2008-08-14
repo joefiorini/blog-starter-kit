@@ -1,4 +1,5 @@
-= render_partial 'event', nil
+- @sticky.each do |post|
+  = render_partial 'event', post
 #posts
   - @posts.each do |post|
-    = render_partial 'post', post
+    = render_partial 'event', post
