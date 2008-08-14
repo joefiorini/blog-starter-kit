@@ -1,8 +1,26 @@
 .post
-  = format_date_long(post.created_at)
-  %h2.title= link_to post.title, post
+  %strong.chicklet
+    = event.type || "Post"
+  %p.info
+  %h1= event.title
+  - if event.type == "Event"
+    .event-meta
+      .presenting
+        %em Presenting
+        = event.presenter
+      .date
+        %em 
+          = event.start_time.to_s :long_ordinal_12hour
+        at
+        = link_to event.location.name, location_url(event.location)
+  - unless event.type
+    .post-meta
+      = event.created_at.to_s :short_date_only
+      %em
+        by
+      = event.author.name
   .post-content
-    = textilize post
+    = textilize event.body
     #tools
       = link_to "#{post.comments.length} comments", comments_for_post_path(post.id)
       &ndash;

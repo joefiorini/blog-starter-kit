@@ -58,7 +58,7 @@ strong.chicklet {
 
 h3 { color: #aaa; font-size: 1.5em; font-family: helvetica; font-weight: bold; text-transform: lowercase;}
 
-div.main-event { margin-top: 20px;}
+div.post { margin-top: 20px;}
 
 p.info span.date { color: #aaa; }
 p.info span.at { font-size: 130%; position: relative; top: 1px; }
@@ -71,6 +71,8 @@ div.event-meta div.presenting { float: left; }
 div.event-meta div.date { float: right; top: 0; left: 20px; }
 
 div.post-content { margin-top: 20px; }
+div.post-meta { font-size: .75em; color: #888;}
+div.post-meta em { color: #444; font-weight: bold;}
 div.post-content p { padding-top: 1em; padding-bottom: 1em;}
 
 div#ruby-scene { margin-top: 40px;}
