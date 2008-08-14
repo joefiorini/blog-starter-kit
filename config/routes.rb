@@ -3,7 +3,7 @@ ActionController::Routing::Routes.draw do |map|
 
   
   map.root :controller => 'posts'
-	map.meetings '/meetings', :controller => 'TemporaryContent', :action => 'coming_soon'
+	map.meetings '/meetings', :controller => 'Events', :action => 'index'
 	map.about '/about', :controller => 'TemporaryContent', :action => 'coming_soon'
 	map.contact '/contact', :controller => 'TemporaryContent', :action => 'coming_soon'
 	map.groups_resources '/resources', :controller => 'TemporaryContent', :action => 'coming_soon'

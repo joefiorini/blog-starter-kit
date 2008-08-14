@@ -22,6 +22,6 @@
   .post-content
     = textilize event.body
     #tools
-      = link_to "#{post.comments.length} comments", comments_for_post_path(post.id)
+      = link_to "#{event.comments.length} comments", comments_for_post_path(event.id)
       &ndash;
-      %a{:href => "#"} permalink
+      %a{:href => post_url(event.permalink)} permalink

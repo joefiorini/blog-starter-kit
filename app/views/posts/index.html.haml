@@ -1,5 +1,5 @@
 - @sticky.each do |post|
-  = render_partial 'post', post
+  = render :partial => 'post', :locals => {:event => post}
 #posts
   - @posts.each do |post|
-    = render_partial 'post', post
+    = render :partial => 'post', :locals => {:event => post}
