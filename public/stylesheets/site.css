@@ -83,6 +83,16 @@ div#map_div { border: solid 1px black;}
 #location h1 { font-size: 2.25em; }
 #location div#address { text-indent: 40px; }
 
+/*********** Comment Form **********/
+
+/* this is the honeypot captcha to catch spam bots */
+div#comment-something { position: absolute; left: -999px; }
+
+div.comment-form{}
+div.comment-form p label{margin-right:5px;}
+div.comment-form p input{font-size:.75em;margin-right:15px;}
+div.comment-form p textarea{width:417px;}
+
 /*********** Links ***********/
 a, a:link, a:visited, a:active { color: #900; font-family: helvetica;  }
 a:hover { color: #908a8a; }
