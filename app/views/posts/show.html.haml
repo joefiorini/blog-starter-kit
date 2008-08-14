@@ -1,6 +1,6 @@
 
 #posts
-  = render_partial 'post', @post
+  = render :partial => 'post', :locals => {:event => @post}
 
 %a{:name => 'comments'}
 .comments
